@@ -50,7 +50,7 @@
               <span class="button-icon" aria-hidden="true">▶</span>
               <span>Слушать альбом</span>
             </button>
-            <span class="album-stats"><b id="trackCount">9</b> <span id="trackCountLabel">композиций</span> <i></i> <span id="totalDuration">—</span></span>
+            <span class="album-stats"><b id="trackCount">9</b> <span id="trackCountLabel">композиций</span> <i id="durationSeparator"></i> <span id="totalDuration"></span></span>
           </div>
         </div>
       </section>
@@ -142,6 +142,7 @@
     </div>
 
     <audio id="audio" preload="metadata"></audio>
+    <script src="albums-data.js"></script>
     <script src="player.js"></script>
   </body>
 </html>

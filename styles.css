@@ -336,7 +336,7 @@ h2 {
 .track-row {
   width: 100%;
   display: grid;
-  grid-template-columns: 54px 64px minmax(150px, 1fr) minmax(150px, 0.7fr) 70px 44px 44px;
+  grid-template-columns: 54px 64px minmax(150px, 1fr) minmax(150px, 0.7fr) 70px 44px 44px 44px;
   align-items: center;
   gap: 18px;
   min-height: 94px;
@@ -361,6 +361,15 @@ h2 {
 }
 
 .track-row.active .track-number { color: var(--copper); }
+
+.track-row.excluded {
+  opacity: 0.5;
+}
+
+.track-row.excluded .track-name,
+.track-row.excluded .track-element {
+  text-decoration: line-through;
+}
 
 .track-art {
   width: 64px;
@@ -401,6 +410,23 @@ h2 {
 
 .track-like {
   justify-self: end;
+}
+
+.track-exclude {
+  --button-size: 38px;
+  justify-self: end;
+  color: #9f998f;
+  font: 700 22px/1 Arial, sans-serif;
+}
+
+.track-exclude.is-excluded {
+  background: var(--copper);
+  color: #fffaf1;
+}
+
+.track-exclude.is-excluded span {
+  display: block;
+  transform: rotate(45deg);
 }
 
 .like-button {
@@ -908,7 +934,7 @@ input[type="range"]::-moz-range-thumb { width: 11px; height: 11px; border: 0; bo
   h1 span { font-size: clamp(54px, 8vw, 76px); }
   body.long-album-title h1 span { font-size: clamp(38px, 5.4vw, 54px); }
   .artist { margin-top: 40px; }
-  .track-row { grid-template-columns: 42px 56px minmax(120px, 1fr) 60px 40px 40px; }
+  .track-row { grid-template-columns: 42px 56px minmax(120px, 1fr) 60px 40px 40px 40px; }
   .track-art { width: 56px; height: 56px; }
   .track-element { display: none; }
   .player { grid-template-columns: minmax(260px, 0.95fr) minmax(300px, 1.35fr); }
@@ -936,13 +962,13 @@ input[type="range"]::-moz-range-thumb { width: 11px; height: 11px; border: 0; bo
   .album-switcher { grid-template-columns: 1fr; }
   .track-section { padding: 55px 0 64px; }
   .section-heading > p { display: none; }
-  .track-row { grid-template-columns: 34px 50px minmax(100px, 1fr) 36px 36px; gap: 12px; min-height: 76px; padding-inline: 3px; }
+  .track-row { grid-template-columns: 34px 50px minmax(100px, 1fr) 34px 34px 34px; gap: 9px; min-height: 76px; padding-inline: 3px; }
   .track-row:hover { padding-inline: 6px; }
   .track-art { width: 50px; height: 50px; }
   .track-name { font-size: 20px; }
   .track-duration { display: none; }
   .row-play { width: 32px; height: 32px; }
-  .track-like { --button-size: 34px; }
+  .track-like, .track-exclude { --button-size: 34px; }
   .page-footer { padding-bottom: 38px; }
   .player { left: 8px; right: 8px; bottom: 8px; min-height: var(--player-height); grid-template-columns: 1fr; gap: 10px; padding: 10px 14px; }
   .now-playing img { width: 64px; height: 64px; }
